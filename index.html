@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INDKAN Pulses & Spices | Premium Pulses, Lentils & Spices</title>
+  <meta name="description" content="INDKAN Pulses & Spices: premium pulses, lentils and spices for wholesalers, distributors and buyers worldwide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --saffron: #E8912D;
+      --turmeric: #F4C430;
+      --maroon: #6B1E2E;
+      --cream: #FFF8EE;
+      --paper: #FFFFFF;
+      --ink: #2A1A14;
+      --muted: #7A6A60;
+      --green: #2F6B4F;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(107, 30, 46, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1140px, 92%); margin: 0 auto; }
+    section { padding: 80px 0; }
+
+    /* NAVBAR */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 248, 238, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(107, 30, 46, 0.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 800; font-size: 1.5rem; color: var(--maroon); }
+    .logo span { color: var(--saffron); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; position: relative; }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+      background: var(--saffron); transition: width 0.25s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .menu-btn { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--maroon); }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(244, 196, 48, 0.45), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(232, 145, 45, 0.35), transparent 40%),
+        linear-gradient(135deg, var(--maroon), #3d0f1a);
+      color: #fff;
+      padding: 100px 0 120px;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+    .eyebrow {
+      display: inline-block; padding: 6px 14px; border-radius: 999px;
+      background: rgba(244, 196, 48, 0.18); color: var(--turmeric);
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 20px; }
+    .hero h1 em { color: var(--turmeric); font-style: italic; }
+    .hero p { opacity: 0.9; max-width: 520px; margin-bottom: 30px; font-size: 1.05rem; }
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 700;
+      border: none; cursor: pointer; font-size: 1rem; font-family: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--saffron); color: #fff; box-shadow: 0 8px 20px rgba(232, 145, 45, 0.4); }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); margin-left: 12px; }
+    .hero-visual {
+      position: relative; height: 380px; display: flex; align-items: center; justify-content: center;
+    }
+    .orb {
+      width: 320px; height: 320px; border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--turmeric), var(--saffron), #c2552a, var(--turmeric));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem; animation: float 6s ease-in-out infinite;
+      box-shadow: 0 0 80px rgba(244, 196, 48, 0.4);
+    }
+    .float-chip {
+      position: absolute; background: #fff; color: var(--ink); padding: 10px 16px;
+      border-radius: 14px; font-weight: 700; font-size: 0.9rem; box-shadow: var(--shadow);
+      animation: float 5s ease-in-out infinite;
+    }
+    .chip-1 { top: 30px; left: 0; }
+    .chip-2 { bottom: 40px; right: 0; animation-delay: 1.5s; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+    /* STATS */
+    .stats { margin-top: -60px; position: relative; z-index: 2; }
+    .stats-grid {
+      background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow);
+      display: grid; grid-template-columns: repeat(4, 1fr); padding: 30px;
+    }
+    .stat { text-align: center; padding: 10px; border-right: 1px solid #f0e4d4; }
+    .stat:last-child { border-right: none; }
+    .stat strong { display: block; font-family: "Fraunces", serif; font-size: 2rem; color: var(--maroon); }
+    .stat span { color: var(--muted); font-size: 0.9rem; }
+
+    /* SECTION HEADINGS */
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 50px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--maroon); margin-bottom: 12px; }
+    .section-head p { color: var(--muted); }
+
+    /* CATEGORIES */
+    .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+    .filter-btn {
+      padding: 10px 20px; border-radius: 999px; border: 2px solid var(--maroon);
+      background: transparent; color: var(--maroon); font-weight: 700; cursor: pointer;
+      font-family: inherit; transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--maroon); color: #fff; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 26px; }
+    .product-card {
+      background: var(--paper); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); cursor: pointer; transition: transform 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-6px); }
+    .product-img {
+      height: 170px; display: flex; align-items: center; justify-content: center;
+      font-size: 4.5rem; background: var(--bg, #fff3d6);
+    }
+    .product-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .tag {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--green); margin-bottom: 6px;
+    }
+    .product-body h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--ink); }
+    .product-body p { color: var(--muted); font-size: 0.93rem; flex: 1; }
+    .view-link { margin-top: 14px; font-weight: 700; color: var(--saffron); }
+
+    /* PACKAGING MODAL */
+    .modal {
+      position: fixed; inset: 0; background: rgba(42, 26, 20, 0.6); z-index: 100;
+      display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal.open { display: flex; animation: fade 0.25s; }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    .modal-box {
+      background: var(--paper); border-radius: 24px; max-width: 620px; width: 100%;
+      max-height: 90vh; overflow-y: auto; position: relative;
+      animation: pop 0.3s cubic-bezier(.2,.9,.3,1.2);
+    }
+    @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal-head {
+      padding: 30px; background: var(--bg, #fff3d6); border-radius: 24px 24px 0 0;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .modal-head .big { font-size: 4rem; }
+    .modal-head h3 { font-size: 1.6rem; color: var(--maroon); }
+    .close {
+      position: absolute; top: 14px; right: 16px; background: #fff; border: none; width: 38px; height: 38px;
+      border-radius: 50%; font-size: 1.3rem; cursor: pointer; box-shadow: var(--shadow);
+    }
+    .modal-body { padding: 26px 30px 34px; }
+    .modal-body p { color: var(--muted); margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #f0e4d4; }
+    th { color: var(--maroon); font-weight: 700; width: 40%; }
+    .modal-body .btn-primary { margin-top: 24px; }
+
+    /* ABOUT */
+    .about { background: var(--paper); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .about h2 { font-size: 2.6rem; color: var(--maroon); margin-bottom: 18px; }
+    .about p { color: var(--muted); margin-bottom: 16px; }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .value {
+      background: var(--cream); padding: 22px; border-radius: var(--radius);
+      border-left: 4px solid var(--saffron);
+    }
+    .value h4 { font-family: "Fraunces", serif; margin-bottom: 6px; color: var(--maroon); }
+    .value p { font-size: 0.9rem; margin: 0; }
+
+    /* ENQUIRY */
+    .enquiry-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: start; }
+    .enquiry-info h2 { font-size: 2.6rem; color: var(--maroon); margin-bottom: 16px; }
+    .enquiry-info p { color: var(--muted); margin-bottom: 26px; }
+    .contact-item { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; }
+    .contact-item .ic {
+      width: 46px; height: 46px; border-radius: 14px; background: var(--maroon); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .form {
+      background: var(--paper); padding: 36px; border-radius: 24px; box-shadow: var(--shadow);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { margin-bottom: 18px; display: flex; flex-direction: column; }
+    .field label { font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; color: var(--ink); }
+    .field input, .field select, .field textarea {
+      padding: 13px 15px; border: 2px solid #efe2cf; border-radius: 12px;
+      font-family: inherit; font-size: 0.95rem; background: var(--cream); transition: border 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--saffron); background: #fff;
+    }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .error { color: #c0392b; font-size: 0.8rem; margin-top: 4px; min-height: 16px; }
+    .form-success {
+      display: none; background: #e8f5ee; color: var(--green); padding: 16px; border-radius: 12px;
+      font-weight: 700; margin-top: 14px; text-align: center;
+    }
+    .form-success.show { display: block; animation: fade 0.4s; }
+    .form .btn-primary { width: 100%; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: #d9ccc2; padding: 60px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    footer h4 { color: #fff; margin-bottom: 14px; font-family: "Fraunces", serif; }
+    footer li { list-style: none; margin-bottom: 8px; font-size: 0.93rem; }
+    footer ul { padding: 0; }
+    .copy { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .enquiry-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-visual { height: 300px; }
+      .orb { width: 240px; height: 240px; font-size: 5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 720px) {
+      .menu-btn { display: block; }
+      .nav-links {
+        position: absolute; top: 72px; left: 0; right: 0; background: var(--cream);
+        flex-direction: column; align-items: center; gap: 0; max-height: 0; overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .nav-links.open { max-height: 400px; }
+      .nav-links li { padding: 16px 0; width: 100%; text-align: center; }
+      .btn-ghost { margin: 12px 0 0; }
+      .form-row { grid-template-columns: 1fr; }
+      .form { padding: 24px; }
+      section { padding: 60px 0; }
+      .values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container nav">
+      <a href="#home" class="logo">INDKAN<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#enquiry">Enquiry</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home" style="padding:0">
+    <div class="container hero-grid" style="padding:100px 0 120px">
+      <div>
+        <span class="eyebrow">Kolkata · Export Quality · Since our founding</span>
+        <h1>Pure Pulses. Bold <em>Spices.</em> Global Trust.</h1>
+        <p>INDKAN brings premium lentils, pulses and hand-picked whole and blended spices to wholesalers, distributors and buyers across the world.</p>
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#enquiry" class="btn btn-ghost">Send an Enquiry</a>
+      </div>
+      <div class="hero-visual">
+        <div class="orb">🌶️</div>
+        <div class="float-chip chip-1">🫘 Premium Pulses</div>
+        <div class="float-chip chip-2">✅ Quality Checked</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat"><strong>12+</strong><span>Products</span></div>
+        <div class="stat"><strong>4</strong><span>Categories</span></div>
+        <div class="stat"><strong>3</strong><span>Buyer Types Served</span></div>
+        <div class="stat"><strong>100%</strong><span>Packaging Info</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Product Range</h2>
+        <p>Filter by category, tap any product to view its description and packaging details.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="products-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <h2>Built on Trust, Driven by Quality</h2>
+        <p>INDKAN World Wide Exim connects producers, suppliers and buyers across borders with transparency and reliability. Every batch is checked for purity, size, moisture and colour before it leaves our warehouse.</p>
+        <p>From a single pack for a local shop to bulk containers for an international distributor, we support every stage of your trade.</p>
+      </div>
+      <div class="values">
+        <div class="value"><h4>Quality Sourcing</h4><p>Carefully selected grains and spices from trusted farms.</p></div>
+        <div class="value"><h4>Hygienic Packing</h4><p>Clean, sealed packaging that protects freshness.</p></div>
+        <div class="value"><h4>Export Ready</h4><p>Documentation and logistics handled end to end.</p></div>
+        <div class="value"><h4>Fair Partnerships</h4><p>Long-term relationships with wholesalers and distributors.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <section id="enquiry">
+    <div class="container enquiry-grid">
+      <div class="enquiry-info">
+        <h2>Let's Talk Business</h2>
+        <p>Tell us what you need. Our trade team responds to wholesale, distributor and bulk export enquiries within one business day.</p>
+        <div class="contact-item"><div class="ic">📍</div><div><strong>Head Office</strong><br><span style="color:var(--muted)">New Town, Kolkata, West Bengal</span></div></div>
+        <div class="contact-item"><div class="ic">✉️</div><div><strong>Email</strong><br><span style="color:var(--muted)">info@indkan.example</span></div></div>
+        <div class="contact-item"><div class="ic">📞</div><div><strong>Phone</strong><br><span style="color:var(--muted)">+91 00000 00000</span></div></div>
+      </div>
+
+      <form class="form" id="enquiryForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name *</label>
+            <input id="name" type="text" placeholder="Your name" />
+            <div class="error" data-for="name"></div>
+          </div>
+          <div class="field">
+            <label for="company">Company *</label>
+            <input id="company" type="text" placeholder="Company name" />
+            <div class="error" data-for="company"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" type="email" placeholder="you@company.com" />
+            <div class="error" data-for="email"></div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone *</label>
+            <input id="phone" type="tel" placeholder="+91 ..." />
+            <div class="error" data-for="phone"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="buyerType">I am a *</label>
+            <select id="buyerType">
+              <option value="">Select buyer type</option>
+              <option>Wholesaler</option>
+              <option>Distributor</option>
+              <option>Direct Buyer / Importer</option>
+            </select>
+            <div class="error" data-for="buyerType"></div>
+          </div>
+          <div class="field">
+            <label for="product">Product Interest</label>
+            <select id="product">
+              <option value="">Any / Not sure</option>
+              <option>Pulses</option>
+              <option>Lentils</option>
+              <option>Whole Spices</option>
+              <option>Blended Spices</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="quantity">Required Quantity</label>
+          <input id="quantity" type="text" placeholder="e.g. 500 kg per month" />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Packaging preference, delivery location, timeline..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+        <div class="form-success" id="successMsg">✅ Thank you! Our trade team will contact you shortly.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>INDKAN<span style="color:var(--saffron)">.</span></h4>
+          <p>Connecting India to global markets through trusted pulses, lentils and spices.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#enquiry">Enquiry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Buyer Types</h4>
+          <ul>
+            <li>Wholesalers</li>
+            <li>Distributors</li>
+            <li>Direct Buyers / Importers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">© 2026 INDKAN World Wide Exim Pvt. Ltd. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="close" id="closeModal" aria-label="Close">✕</button>
+      <div class="modal-head" id="modalHead"></div>
+      <div class="modal-body">
+        <p id="modalDesc"></p>
+        <table id="modalTable"></table>
+        <a href="#enquiry" class="btn btn-primary" id="modalEnquire">Enquire About This Product</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- PRODUCT DATA (replace with real INDKAN data / images) ----------
+    const products = [
+      { id: 1, name: "Yellow Split Peas (Matar Dal)", category: "Pulses", icon: "🟡", bg: "#fff3d6",
+        desc: "Naturally sweet, clean-split yellow peas, sorted and polished for even cooking.",
+        pack: { "Pack sizes": "1 kg, 5 kg, 25 kg PP bags", "Grade": "Premium, 98% purity", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
+      { id: 2, name: "Chana Dal", category: "Pulses", icon: "🟤", bg: "#f6e3c4",
+        desc: "Bold, golden Bengal gram split with a consistent colour and nutty flavour.",
+        pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Export grade", "Moisture": "Max 11%", "Shelf life": "12 months", "Storage": "Airtight, dry area" } },
+      { id: 3, name: "Masoor Dal (Red Lentil)", category: "Lentils", icon: "🔴", bg: "#fde2d6",
+        desc: "Quick-cooking red lentils, ideal for dal, soups and bulk food processing.",
+        pack: { "Pack sizes": "500 g, 1 kg, 25 kg", "Grade": "Standard & premium", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
+      { id: 4, name: "Moong Dal (Yellow)", category: "Lentils", icon: "💛", bg: "#fff6c9",
+        desc: "Light and easy to digest, hulled and split for a smooth, creamy texture.",
+        pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Premium", "Moisture": "Max 11%", "Shelf life": "12 months", "Storage": "Airtight container" } },
+      { id: 5, name: "Turmeric Powder", category: "Whole Spices", icon: "🧡", bg: "#ffe3b3",
+        desc: "Vibrant, high-curcumin turmeric ground from hand-selected rhizomes.",
+        pack: { "Pack sizes": "100 g, 500 g, 1 kg pouch", "Curcumin": "Min 3%", "Moisture": "Max 10%", "Shelf life": "18 months", "Storage": "Away from sunlight" } },
+      { id: 6, name: "Whole Red Chilli (Kashmiri)", category: "Whole Spices", icon: "🌶️", bg: "#ffd7cc",
+        desc: "Deep red, mild-heat Kashmiri chillies prized for colour and aroma.",
+        pack: { "Pack sizes": "250 g, 1 kg, 5 kg", "Heat": "Mild", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry, sealed" } },
+      { id: 7, name: "Cumin Seeds", category: "Whole Spices", icon: "🌾", bg: "#eee3cc",
+        desc: "Whole cumin with strong aroma and clean colour, sorted for export markets.",
+        pack: { "Pack sizes": "250 g, 1 kg, 25 kg", "Purity": "Min 99%", "Moisture": "Max 9%", "Shelf life": "18 months", "Storage": "Airtight" } },
+      { id: 8, name: "Garam Masala", category: "Blended Spices", icon: "🫚", bg: "#f7d9b5",
+        desc: "Signature blend of cardamom, cinnamon, clove and black pepper.",
+        pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Type": "Blended, no added colour", "Moisture": "Max 10%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
+      { id: 9, name: "Chana Masala Blend", category: "Blended Spices", icon: "🍛", bg: "#ffe6c7",
+        desc: "Tangy, balanced masala crafted for chickpea curries and street-style chaat.",
+        pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Type": "Blended", "Moisture": "Max 10%", "Shelf life": "12 months", "Storage": "Airtight container" } },
+      { id: 10, name: "Mustard Seeds", category: "Whole Spices", icon: "⚫", bg: "#e6e0d4",
+        desc: "Pungent black and yellow mustard seeds for tempering and pickling.",
+        pack: { "Pack sizes": "250 g, 1 kg, 25 kg", "Purity": "Min 99%", "Moisture": "Max 9%", "Shelf life": "18 months", "Storage": "Dry, sealed" } },
+      { id: 11, name: "Toor Dal (Arhar)", category: "Pulses", icon: "🟨", bg: "#fbeab0",
+        desc: "Creamy split pigeon peas, polished and sorted for consistent quality.",
+        pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Premium", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
+      { id: 12, name: "Black Pepper (Whole)", category: "Whole Spices", icon: "🖤", bg: "#e3dcd6",
+        desc: "Bold, pungent whole peppercorns with high piperine content.",
+        pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Piperine": "Min 4%", "Moisture": "Max 12%", "Shelf life": "18 months", "Storage": "Airtight" } }
+    ];
+
+    const categories = ["All", "Pulses", "Lentils", "Whole Spices", "Blended Spices"];
+    let activeFilter = "All";
+
+    const filtersEl = document.getElementById("filters");
+    const gridEl = document.getElementById("productGrid");
+
+    function renderFilters() {
+      filtersEl.innerHTML = categories.map(c =>
+        `<button class="filter-btn ${c === activeFilter ? "active" : ""}" data-cat="${c}">${c}</button>`
+      ).join("");
+    }
+
+    function renderProducts() {
+      const list = activeFilter === "All" ? products : products.filter(p => p.category === activeFilter);
+      gridEl.innerHTML = list.map(p => `
+        <article class="product-card" data-id="${p.id}">
+          <div class="product-img" style="--bg:${p.bg}">${p.icon}</div>
+          <div class="product-body">
+            <div class="tag">${p.category}</div>
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+            <div class="view-link">View packaging →</div>
+          </div>
+        </article>`).join("");
+    }
+
+    filtersEl.addEventListener("click", e => {
+      const btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+      activeFilter = btn.dataset.cat;
+      renderFilters();
+      renderProducts();
+    });
+
+    // ---------- MODAL ----------
+    const modal = document.getElementById("modal");
+    gridEl.addEventListener("click", e => {
+      const card = e.target.closest(".product-card");
+      if (!card) return;
+      const p = products.find(x => x.id === Number(card.dataset.id));
+      document.getElementById("modalHead").style.setProperty("--bg", p.bg);
+      document.getElementById("modalHead").innerHTML =
+        `<div class="big">${p.icon}</div><div><div class="tag">${p.category}</div><h3>${p.name}</h3></div>`;
+      document.getElementById("modalDesc").textContent = p.desc;
+      document.getElementById("modalTable").innerHTML =
+        `<tbody>${Object.entries(p.pack).map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join("")}</tbody>`;
+      document.getElementById("modalEnquire").onclick = () => {
+        document.getElementById("product").value = p.category;
+        closeModal();
+      };
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    });
+
+    function closeModal() {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    document.getElementById("closeModal").onclick = closeModal;
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+    // ---------- MOBILE MENU ----------
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("menuBtn").onclick = () => navLinks.classList.toggle("open");
+    navLinks.addEventListener("click", e => { if (e.target.tagName === "A") navLinks.classList.remove("open"); });
+
+    // ---------- ENQUIRY FORM VALIDATION ----------
+    const form = document.getElementById("enquiryForm");
+    const successMsg = document.getElementById("successMsg");
+
+    const rules = {
+      name: v => v.trim().length >= 2 || "Please enter your name",
+      company: v => v.trim().length >= 2 || "Please enter your company",
+      email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "Enter a valid email",
+      phone: v => /^[+0-9\s-]{8,15}$/.test(v) || "Enter a valid phone number",
+      buyerType: v => v !== "" || "Please select a buyer type"
+    };
+
+    function validate() {
+      let ok = true;
+      for (const field in rules) {
+        const input = document.getElementById(field);
+        const result = rules[field](input.value);
+        const errEl = form.querySelector(`[data-for="${field}"]`);
+        if (result === true) {
+          errEl.textContent = "";
+        } else {
+          errEl.textContent = result;
+          ok = false;
+        }
+      }
+      return ok;
+    }
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      successMsg.classList.remove("show");
+      if (!validate()) return;
+
+      // In production, send `data` to your backend or an email/CRM service.
+      const data = {
+        name: form.name.value, company: form.company.value, email: form.email.value,
+        phone: form.phone.value, buyerType: form.buyerType.value,
+        product: form.product.value, quantity: form.quantity.value, message: form.message.value
+      };
+      console.log("Enquiry submitted:", data);
+
+      successMsg.classList.add("show");
+      form.reset();
+    });
+
+    // ---------- INIT ----------
+    renderFilters();
+    renderProducts();
+  </script>
+</body>
+</html>
