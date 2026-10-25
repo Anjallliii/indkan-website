@@ -249,6 +249,9 @@
       section { padding: 60px 0; }
       .values { grid-template-columns: 1fr; }
     }
+    .product-img img, .modal-head img { width: 100%; height: 100%; object-fit: cover; }
+    .product-img { height: 200px; }
+    .modal-head .big img { width: 90px; height: 90px; object-fit: cover; border-radius: 16px; }
   </style>
 </head>
 <body>
@@ -445,37 +448,37 @@
       { id: 1, name: "Yellow Split Peas (Matar Dal)", category: "Pulses", icon: "🟡", bg: "#fff3d6",
         desc: "Naturally sweet, clean-split yellow peas, sorted and polished for even cooking.",
         pack: { "Pack sizes": "1 kg, 5 kg, 25 kg PP bags", "Grade": "Premium, 98% purity", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
-      { id: 2, name: "Chana Dal", category: "Pulses", icon: "🟤", bg: "#f6e3c4",
+      { id: 2, name: "Chana Dal", category: "Pulses", icon: "🟤", image: "chana-dal.jpg", bg: "#f6e3c4",
         desc: "Bold, golden Bengal gram split with a consistent colour and nutty flavour.",
         pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Export grade", "Moisture": "Max 11%", "Shelf life": "12 months", "Storage": "Airtight, dry area" } },
       { id: 3, name: "Masoor Dal (Red Lentil)", category: "Lentils", icon: "🔴", bg: "#fde2d6",
         desc: "Quick-cooking red lentils, ideal for dal, soups and bulk food processing.",
         pack: { "Pack sizes": "500 g, 1 kg, 25 kg", "Grade": "Standard & premium", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
-      { id: 4, name: "Moong Dal (Yellow)", category: "Lentils", icon: "💛", bg: "#fff6c9",
+      { id: 4, name: "Moong Dal (Yellow)", category: "Lentils", icon: "💛", image: "moon-dal.jpg", bg: "#fff6c9",
         desc: "Light and easy to digest, hulled and split for a smooth, creamy texture.",
         pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Premium", "Moisture": "Max 11%", "Shelf life": "12 months", "Storage": "Airtight container" } },
-      { id: 5, name: "Turmeric Powder", category: "Whole Spices", icon: "🧡", bg: "#ffe3b3",
+      { id: 5, name: "Turmeric Powder", category: "Whole Spices", icon: "🧡", image: "turmeric-powder.jpg", bg: "#ffe3b3",
         desc: "Vibrant, high-curcumin turmeric ground from hand-selected rhizomes.",
         pack: { "Pack sizes": "100 g, 500 g, 1 kg pouch", "Curcumin": "Min 3%", "Moisture": "Max 10%", "Shelf life": "18 months", "Storage": "Away from sunlight" } },
-      { id: 6, name: "Whole Red Chilli (Kashmiri)", category: "Whole Spices", icon: "🌶️", bg: "#ffd7cc",
+      { id: 6, name: "Whole Red Chilli (Kashmiri)", category: "Whole Spices", icon: "🌶️", image: "red-chilli.jpg", bg: "#ffd7cc",
         desc: "Deep red, mild-heat Kashmiri chillies prized for colour and aroma.",
         pack: { "Pack sizes": "250 g, 1 kg, 5 kg", "Heat": "Mild", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry, sealed" } },
-      { id: 7, name: "Cumin Seeds", category: "Whole Spices", icon: "🌾", bg: "#eee3cc",
+      { id: 7, name: "Cumin Seeds", category: "Whole Spices", icon: "🌾", image: "cumin-seeds.jpg", bg: "#eee3cc",
         desc: "Whole cumin with strong aroma and clean colour, sorted for export markets.",
         pack: { "Pack sizes": "250 g, 1 kg, 25 kg", "Purity": "Min 99%", "Moisture": "Max 9%", "Shelf life": "18 months", "Storage": "Airtight" } },
-      { id: 8, name: "Garam Masala", category: "Blended Spices", icon: "🫚", bg: "#f7d9b5",
+      { id: 8, name: "Garam Masala", category: "Blended Spices", icon: "🫚", image: "garam-masala.jpg", bg: "#f7d9b5",
         desc: "Signature blend of cardamom, cinnamon, clove and black pepper.",
         pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Type": "Blended, no added colour", "Moisture": "Max 10%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
-      { id: 9, name: "Chana Masala Blend", category: "Blended Spices", icon: "🍛", bg: "#ffe6c7",
+      { id: 9, name: "Chana Masala Blend", category: "Blended Spices", icon: "🍛", image: "chana-masala-blend.jpg", bg: "#ffe6c7",
         desc: "Tangy, balanced masala crafted for chickpea curries and street-style chaat.",
         pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Type": "Blended", "Moisture": "Max 10%", "Shelf life": "12 months", "Storage": "Airtight container" } },
-      { id: 10, name: "Mustard Seeds", category: "Whole Spices", icon: "⚫", bg: "#e6e0d4",
+      { id: 10, name: "Mustard Seeds", category: "Whole Spices", icon: "⚫", image: "mustard-seeds.jpg", bg: "#e6e0d4",
         desc: "Pungent black and yellow mustard seeds for tempering and pickling.",
         pack: { "Pack sizes": "250 g, 1 kg, 25 kg", "Purity": "Min 99%", "Moisture": "Max 9%", "Shelf life": "18 months", "Storage": "Dry, sealed" } },
-      { id: 11, name: "Toor Dal (Arhar)", category: "Pulses", icon: "🟨", bg: "#fbeab0",
+      { id: 11, name: "Toor Dal (Arhar)", category: "Pulses", icon: "🟨", image: "toor-dal.jpg", bg: "#fbeab0",
         desc: "Creamy split pigeon peas, polished and sorted for consistent quality.",
         pack: { "Pack sizes": "1 kg, 5 kg, 25 kg", "Grade": "Premium", "Moisture": "Max 12%", "Shelf life": "12 months", "Storage": "Cool, dry place" } },
-      { id: 12, name: "Black Pepper (Whole)", category: "Whole Spices", icon: "🖤", bg: "#e3dcd6",
+      { id: 12, name: "Black Pepper (Whole)", category: "Whole Spices", icon: "🖤", image: "black-pepper.jpg", bg: "#e3dcd6",
         desc: "Bold, pungent whole peppercorns with high piperine content.",
         pack: { "Pack sizes": "100 g, 500 g, 1 kg", "Piperine": "Min 4%", "Moisture": "Max 12%", "Shelf life": "18 months", "Storage": "Airtight" } }
     ];
@@ -496,7 +499,7 @@
       const list = activeFilter === "All" ? products : products.filter(p => p.category === activeFilter);
       gridEl.innerHTML = list.map(p => `
         <article class="product-card" data-id="${p.id}">
-          <div class="product-img" style="--bg:${p.bg}">${p.icon}</div>
+          <div class="product-img" style="--bg:${p.bg}">${p.image ? `<img src="${p.image}" alt="${p.name}">` : p.icon}</div>
           <div class="product-body">
             <div class="tag">${p.category}</div>
             <h3>${p.name}</h3>
@@ -522,7 +525,7 @@
       const p = products.find(x => x.id === Number(card.dataset.id));
       document.getElementById("modalHead").style.setProperty("--bg", p.bg);
       document.getElementById("modalHead").innerHTML =
-        `<div class="big">${p.icon}</div><div><div class="tag">${p.category}</div><h3>${p.name}</h3></div>`;
+        `<div class="big">${p.image ? `<img src="${p.image}" alt="${p.name}">` : p.icon}</div><div><div class="tag">${p.category}</div><h3>${p.name}</h3></div>`;
       document.getElementById("modalDesc").textContent = p.desc;
       document.getElementById("modalTable").innerHTML =
         `<tbody>${Object.entries(p.pack).map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join("")}</tbody>`;
